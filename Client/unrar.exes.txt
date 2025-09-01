@@ -1,0 +1,10 @@
+Star_Wars_Battlefront_II-Manual.pdf.part1.exe
+
+Adobe\AdbeRdr934_en_US.exe.part1.exe
+
+
+GameData\data2.cab.part01.exe
+GameData\data3.cab.part01.exe
+GameData\data4.cab.part01.exe
+GameData\data5.cab.part01.exe
+GameData\data6.cab.part01.exe
