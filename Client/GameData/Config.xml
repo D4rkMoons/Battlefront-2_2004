@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fanfavorites>
+  <documentation path="..\Install\docs\english\trouble.rtf"/>
+
+  <config name="config" title="Star Wars® Battlefront™ II" installer="SetupBF2.exe">IMPORTANT NOTE: You may encounter audio problems or a game crash when attempting to play Star Wars® Battlefront™ II on Windows Vista® unless a microphone is plugged into the microphone jack of your computer or if the "Stereo Mix" device is not enabled on the Recording Tab of the "Sound" Windows Control Panel applet. For additional information on these issues, please refer to the troubleshooting guide on the game disc located here:</config>
+
+</fanfavorites> 
