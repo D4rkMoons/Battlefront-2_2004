@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Launcher title="Launcher" exe="LaunchBFII.exe" registry="Software\LucasArts\Star Wars Battlefront II\1.0" mutex="PlayBF" volume="BFII">
+	<Mutex value="PlayBF"></Mutex>
+	<Resources>
+		<!-- install page -->
+		<BitmapResource name="install_map" path="Install\pages\install\install_map.png" />
+		<BitmapResource name="install_up" path="Install\pages\install\install_up.png" />
+		<BitmapResource name="install_over" path="Install\pages\install\install_over.png" />
+		<BitmapResource name="install_down" path="Install\pages\install\install_down.png" />
+		<BitmapResource name="install_inactive" path="Install\pages\install\install_inactive.png" />
+		<!-- main page -->
+		<BitmapResource name="main_map" path="Install\pages\main\main_map.png" />
+		<BitmapResource name="main_up" path="Install\pages\main\main_up.png" />
+		<BitmapResource name="main_over" path="Install\pages\main\main_over.png" />
+		<BitmapResource name="main_down" path="Install\pages\main\main_down.png" />
+		<BitmapResource name="main_inactive" path="Install\pages\main\main_inactive.png" />
+		<!-- pre-install options page -->		
+		<BitmapResource name="pre_options_map" path="Install\pages\preoptions\pre_options_map.png" />
+		<BitmapResource name="pre_options_up" path="Install\pages\preoptions\pre_options_up.png" />
+		<BitmapResource name="pre_options_over" path="Install\pages\preoptions\pre_options_over.png" />
+		<BitmapResource name="pre_options_down" path="Install\pages\preoptions\pre_options_down.png" />
+		<!-- post-install options page -->		
+		<BitmapResource name="options_map" path="Install\pages\options\options_map.png" />
+		<BitmapResource name="options_up" path="Install\pages\options\options_up.png" />
+		<BitmapResource name="options_over" path="Install\pages\options\options_over.png" />
+		<BitmapResource name="options_down" path="Install\pages\options\options_down.png" />
+		<!-- help page -->		
+		<BitmapResource name="help_map" path="Install\pages\help\help_map.png" />
+		<BitmapResource name="help_up" path="Install\pages\help\help_up.png" />
+		<BitmapResource name="help_over" path="Install\pages\help\help_over.png" />
+		<BitmapResource name="help_down" path="Install\pages\help\help_down.png" />
+		<!-- extras page -->		
+		<BitmapResource name="extras_map" path="Install\pages\extras\extras_map.png" />
+		<BitmapResource name="extras_up" path="Install\pages\extras\extras_up.png" />
+		<BitmapResource name="extras_over" path="Install\pages\extras\extras_over.png" />
+		<BitmapResource name="extras_down" path="Install\pages\extras\extras_down.png" />
+		<BitmapResource name="extras_inactive" path="Install\pages\extras\extras_inactive.png" />
+		<!-- sounds -->
+		<AudioResource name="click_sound" preload="false" path="Install\audio\click.wav" />
+		<AudioResource name="over_sound" preload="false" path="Install\audio\hover.wav" />
+		<AudioResource name="start_sound" preload="false" path="Install\audio\start.wav" />
+		<AudioResource name="open_sound" preload="false" path="Install\audio\open.wav" />		
+		<!-- executables -->
+		<ExecutableResource name="game" path="GameData\BattlefrontII.exe" />
+		<ExecutableResource name="installer" path="GameData\Setup.exe" />
+		<ExecutableResource name="uninstaller" path="Install\uninst.exe" />
+		<ExecutableResource name="directx" path="DirectX\dxsetup.exe" />
+		<ExecutableResource name="syscheck" path="Install\syscheck.exe" />
+		<ExecutableResource name="doc" path="Install\doc.exe" />
+		<!-- URLs -->
+		<URLResource name="lec" value="http://www.lucasarts.com/" />
+		<URLResource name="register" value="http://reg.lucasarts.com" />
+		<URLResource name="update" value="http://www.swbattlefront2.com" />		
+		<URLResource name="trailer" value="Movies\EAW_trailer_640x480.avi" />
+		<URLResource name="demo" value="http://www.tryswg.com" />
+		<!-- font aliases -->
+		<FontResource name="heading" size="28" face="Arial" weight="bold" charset="default" custom="false" file="" />
+		<FontResource name="medium" size="18" face="Arial" weight="ultrabold" charset="default" custom="false" file="" />
+		<!-- plugin verification and load-->				
+		<PluginResource name="HardwareEx">
+			<Plugin name="HardwareEx" />
+		</PluginResource>
+		<!-- install page -->
+		<Page name="install" key="LN_PAGE_INSTALL" borderColor="0 255 0" ignoreColor="32 32 32" tabGroup="tab">
+			<BitmapReference name="install_map" usage="REGION_MAP" />
+			<BitmapReference name="install_up" usage="UP" />
+			<BitmapReference name="install_over" usage="OVER" />
+			<BitmapReference name="install_down" usage="DOWN" />
+			<BitmapReference name="install_inactive" usage="INACTIVE" />
+			
+			<StaticText name="install_title" mapColor="255 0 0" key="LN_PAGE_INSTALL" font="heading" foreColor="32 32 32"
+				backColor="0 0 0" transBg="true" halign="center" valign="center" xoffset="0" yoffset="0" multiline="false" />
+			
+			<Button name="install" mapColor="153 255 102">
+				<Label key="LN_INSTALL" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200"
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.PlayAudio -name open_sound -u 1" />
+					<Command value="Launcher.DisableControl -name install" />
+					<Command value="Launcher.DisableControl -name help" />
+					<Command value="Launcher.DisableControl -name options" />
+					<Command value="Launcher.DisableControl -name exit" />
+					<Command value="Launcher.LaunchInstaller -name installer" />
+					<Command value="Launcher.EnableControl -name install" />
+					<Command value="Launcher.EnableControl -name help" />
+					<Command value="Launcher.EnableControl -name options" />
+					<Command value="Launcher.EnableControl -name exit" />
+				</Handler>
+			</Button>
+			<Button name="help" mapColor="102 255 153">
+				<Label key="LN_HELP" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200" 
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.PlayAudio -name click_sound -u 1" />
+					<Command value="Launcher.PushPage -name help" />
+				</Handler>
+			</Button>
+			<Button name="options" mapColor="51 255 204">
+				<Label key="LN_OPTIONS" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200" 
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.PlayAudio -name click_sound -u 1" />
+					<Command value="Launcher.PushPage -name pre_options" />
+				</Handler>
+			</Button>
+			<Button name="exit" mapColor="0 255 255">
+				<Label key="LN_EXIT" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200" 
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.Quit" />
+				</Handler>
+			</Button>
+			<Button name="minimize" mapColor="255 255 0">
+				<Handler event="OnEnter">
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.Minimize" />
+				</Handler>
+			</Button>
+			<Button name="close" mapColor="255 180 0">
+				<Handler event="OnEnter">
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.Quit" />
+				</Handler>
+			</Button>
+			<ControlGroup name="tab">
+				<ControlReference name="install" />
+				<ControlReference name="help" />
+				<ControlReference name="options" />
+				<ControlReference name="exit" />
+			</ControlGroup>
+		</Page>
+		<!-- main page -->
+		<Page name="main" key="LN_PAGE_MAIN" borderColor="0 255 0" ignoreColor="32 32 32" tabGroup="tab">
+			<BitmapReference name="main_map" usage="REGION_MAP" />
+			<BitmapReference name="main_up" usage="UP" />
+			<BitmapReference name="main_over" usage="OVER" />
+			<BitmapReference name="main_down" usage="DOWN" />
+			<BitmapReference name="main_inactive" usage="INACTIVE" />
+
+			<StaticText name="main_title" mapColor="255 0 0" key="LN_PAGE_MAIN" font="heading" foreColor="32 32 32"
+				backColor="0 0 0" transBg="true" halign="center" valign="center" xoffset="0" yoffset="0" multiline="false" />
+
+			<Button name="play_game" mapColor="204 255 51">
+				<Label key="LN_SINGLE" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200"
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.DisableControl -name play_game" />
+					<Command value="Launcher.DisableControl -name help" />
+					<Command value="Launcher.DisableControl -name options" />
+					<Command value="Launcher.DisableControl -name exit" />
+					<Command value="Launcher.PlayAudio -name open_sound -u 1" />
+					<Command value="Launcher.LaunchExeTestHw -name game -data '' -cd true" />
+					<Command value="Launcher.EnableControl -name play_game" />
+					<Command value="Launcher.EnableControl -name help" />
+					<Command value="Launcher.EnableControl -name options" />
+					<Command value="Launcher.EnableControl -name exit" />
+				</Handler>
+			</Button>
+			<Button name="extras" mapColor="153 255 102">			
+				<Label key="LN_EXTRAS" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200"
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.PlayAudio -name click_sound -u 1" />
+					<Command value="Launcher.PushPage -name extras" />
+				</Handler>
+			</Button>			
+			<Button name="help" mapColor="102 255 153">
+				<Label key="LN_HELP" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200"
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.PlayAudio -name click_sound -u 1" />
+					<Command value="Launcher.PushPage -name help" />
+				</Handler>
+			</Button>
+			<Button name="options" mapColor="51 255 204">
+				<Label key="LN_OPTIONS" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200"
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.PlayAudio -name click_sound -u 1" />
+					<Command value="Launcher.PushPage -name options" />
+				</Handler>
+			</Button>
+			<Button name="exit" mapColor="0 255 255">
+				<Label key="LN_EXIT" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200"
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.Quit" />
+				</Handler>
+			</Button>
+			<Button name="minimize" mapColor="255 255 0">
+				<Handler event="OnEnter">
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.Minimize" />
+				</Handler>
+			</Button>
+			<Button name="close" mapColor="255 180 0">
+				<Handler event="OnEnter">
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.Quit" />
+				</Handler>
+			</Button>
+			<ControlGroup name="tab">
+				<ControlReference name="play_game" />
+				<ControlReference name="extras" />
+				<ControlReference name="help" />
+				<ControlReference name="options" />
+				<ControlReference name="exit" />
+			</ControlGroup>
+		</Page>
+		<!-- pre-install options page -->
+		<Page name="pre_options" key="LN_PAGE_OPTIONS" borderColor="0 255 0" ignoreColor="32 32 32" tabGroup="tab">
+			<BitmapReference name="pre_options_map" usage="REGION_MAP" />
+			<BitmapReference name="pre_options_up" usage="UP" />
+			<BitmapReference name="pre_options_over" usage="OVER" />
+			<BitmapReference name="pre_options_down" usage="DOWN" />
+			
+			<StaticText name="options_title" mapColor="255 0 0" key="LN_PAGE_OPTIONS" font="heading" foreColor="32 32 32"
+				backColor="0 0 0" transBg="true" halign="center" valign="center" xoffset="0" yoffset="0" multiline="false" />
+			
+			<Button name="visitLEC" mapColor="153 255 102">
+				<Label key="LN_VISIT_LEC" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200"
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.PlayAudio -name click_sound -u 1" />
+					<Command value="Launcher.LaunchURL -name lec" />
+				</Handler>
+			</Button>
+			<Button name="view_license" mapColor="102 255 153">
+				<Label key="LN_LICENSE" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200"
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.PlayAudio -name click_sound -u 1" />
+					<Command value="Launcher.LaunchExeStartLang -name doc -folder 'docs' -data 'License.txt'" />
+				</Handler>
+			</Button>
+			<Button name="back" mapColor="51 255 204">
+				<Label key="LN_BACK" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200"
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.PlayAudio -name click_sound -u 1" />
+					<Command value="Launcher.PopPage" />
+				</Handler>
+			</Button>
+			<Button name="minimize" mapColor="255 255 0">
+				<Handler event="OnEnter">
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.Minimize" />
+				</Handler>
+			</Button>
+			<Button name="close" mapColor="255 180 0">
+				<Handler event="OnEnter">
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.Quit" />
+				</Handler>
+			</Button>
+			<ControlGroup name="tab">
+				<ControlReference name="visitLEC" />
+				<ControlReference name="view_license" />
+				<ControlReference name="back" />
+			</ControlGroup>
+		</Page>
+		<!-- post-install options page -->
+		<Page name="options" key="LN_PAGE_OPTIONS" borderColor="0 255 0" ignoreColor="32 32 32" tabGroup="tab">
+			<BitmapReference name="options_map" usage="REGION_MAP" />
+			<BitmapReference name="options_up" usage="UP" />
+			<BitmapReference name="options_over" usage="OVER" />
+			<BitmapReference name="options_down" usage="DOWN" />
+			
+			<StaticText name="options_title" mapColor="255 0 0" key="LN_PAGE_OPTIONS" font="heading" foreColor="32 32 32"
+				backColor="0 0 0" transBg="true" halign="center" valign="center" xoffset="0" yoffset="0" multiline="false" />
+			
+			<Button name="visitLEC" mapColor="204 255 51">
+				<Label key="LN_VISIT_LEC" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200"
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.PlayAudio -name click_sound -u 1" />
+					<Command value="Launcher.LaunchURL -name lec" />
+				</Handler>
+			</Button>
+			<Button name="install_manage" mapColor="153 255 102">
+				<Label key="LN_UNINSTALL" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200" 
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.PlayAudio -name click_sound -u 1" />
+					<Command value="Launcher.LaunchExeStartLang -name uninstaller -folder 'strings' -data ''" />
+					<Command value="Launcher.Quit" />
+				</Handler>
+			</Button>
+			<Button name="register" mapColor="102 255 153">
+				<Label key="LN_REGISTER" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200"
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.PlayAudio -name click_sound -u 1" />
+					<Command value="Launcher.LaunchURL -name register" />
+				</Handler>
+			</Button>
+			<Button name="view_license" mapColor="51 255 204">
+				<Label key="LN_LICENSE" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200"
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.PlayAudio -name click_sound -u 1" />
+					<Command value="Launcher.LaunchExeStartLang -name doc -folder 'docs' -data 'License.txt'" />					
+				</Handler>
+			</Button>
+			<Button name="back" mapColor="0 255 255">
+				<Label key="LN_BACK" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200"
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.PlayAudio -name click_sound -u 1" />
+					<Command value="Launcher.PopPage" />
+				</Handler>
+			</Button>
+			<Button name="minimize" mapColor="255 255 0">
+				<Handler event="OnEnter">
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.Minimize" />
+				</Handler>
+			</Button>
+			<Button name="close" mapColor="255 180 0">
+				<Handler event="OnEnter">
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.Quit" />
+				</Handler>
+			</Button>
+			<ControlGroup name="tab">
+				<ControlReference name="visitLEC" />
+				<ControlReference name="install_manage" />
+				<ControlReference name="register" />
+				<ControlReference name="view_license" />
+				<ControlReference name="back" />
+			</ControlGroup>
+		</Page>
+		<!-- help page -->		
+		<Page name="help" key="LN_PAGE_HELP" borderColor="0 255 0" ignoreColor="32 32 32" tabGroup="tab">
+			<BitmapReference name="help_map" usage="REGION_MAP" />
+			<BitmapReference name="help_up" usage="UP" />
+			<BitmapReference name="help_over" usage="OVER" />
+			<BitmapReference name="help_down" usage="DOWN" />
+			
+			<StaticText name="help_title" mapColor="255 0 0" key="LN_PAGE_HELP" font="heading" foreColor="32 32 32"
+				backColor="0 0 0" transBg="true" halign="center" valign="center" xoffset="0" yoffset="0" multiline="false" />
+
+			<Button name="analyze" mapColor="153 255 102">
+				<Label key="LN_ANALYZE" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200"
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.PlayAudio -name click_sound -u 1" />
+					<Command value="Launcher.LaunchExeStartLangWait -name syscheck -folder 'strings' -data ''" />
+				</Handler>
+			</Button>
+			<Button name="view_readme" mapColor="102 255 153">
+				<Label key="LN_README" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200"
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.PlayAudio -name click_sound -u 1" />
+					<Command value="Launcher.LaunchExeStartLang -name doc -folder 'docs' -data 'Readme.rtf'" />					
+				</Handler>
+			</Button>
+			<Button name="view_t_guide" mapColor="51 255 204">
+				<Label key="LN_TROUBLE" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200"
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.PlayAudio -name click_sound -u 1" />
+					<Command value="Launcher.LaunchExecutable -name doc -data 'TSGuide'" />
+					<Command value="Launcher.LaunchExeStartLang -name doc -folder 'docs' -data 'Trouble.rtf'" />										
+				</Handler>
+			</Button>
+			<Button name="back" mapColor="0 255 255">
+				<Label key="LN_BACK" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200"
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.PlayAudio -name click_sound -u 1" />
+					<Command value="Launcher.PopPage" />
+				</Handler>
+			</Button>
+			<Button name="minimize" mapColor="255 255 0">
+				<Handler event="OnEnter">
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.Minimize" />
+				</Handler>
+			</Button>
+			<Button name="close" mapColor="255 180 0">
+				<Handler event="OnEnter">
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.Quit" />
+				</Handler>
+			</Button>
+			<ControlGroup name="tab">
+				<ControlReference name="analyze" />
+				<ControlReference name="view_readme" />
+				<ControlReference name="view_t_guide" />
+				<ControlReference name="back" />
+			</ControlGroup>
+		</Page>
+		<!-- extras page -->		
+		<Page name="extras" key="LN_PAGE_EXTRAS" borderColor="0 255 0" ignoreColor="32 32 32" tabGroup="tab">
+			<BitmapReference name="extras_map" usage="REGION_MAP" />
+			<BitmapReference name="extras_up" usage="UP" />
+			<BitmapReference name="extras_over" usage="OVER" />
+			<BitmapReference name="extras_down" usage="DOWN" />
+			<BitmapReference name="extras_inactive" usage="INACTIVE" />
+						
+			<StaticText name="extras_title" mapColor="255 0 0" key="LN_PAGE_EXTRAS" font="heading" foreColor="32 32 32"
+				backColor="0 0 0" transBg="true" halign="center" valign="center" xoffset="0" yoffset="0" multiline="false" />
+			
+			<Button name="view_trailer" mapColor="153 255 102">			
+				<Label key="LN_TRAILER" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200"
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.DisableControl -name view_trailer" />
+					<Command value="Launcher.DisableControl -name demo" />
+					<Command value="Launcher.DisableControl -name back" />
+					<Command value="Launcher.PlayAudio -name click_sound -u 1" />
+					<Command value="Launcher.LaunchURL -name trailer" />
+					<Command value="Launcher.EnableControl -name view_trailer" />
+					<Command value="Launcher.EnableControl -name demo" />
+					<Command value="Launcher.EnableControl -name back" />
+				</Handler>
+			</Button>			
+			<Button name="demo" mapColor="102 255 153">
+				<Label key="LN_DEMO" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200"
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.PlayAudio -name click_sound -u 1" />
+					<Command value="Launcher.LaunchURL -name demo" />
+					<Command value="Launcher.Quit" />
+				</Handler>
+			</Button>
+			<Button name="back" mapColor="51 255 204">
+				<Label key="LN_BACK" font="medium" upColor="200 200 200" overColor="32 32 32" downColor="200 200 200"
+					halign="center" valign="center" xoffset="0" yoffset="0" xPressOffset="0" yPressOffset="2" multiline="false" />
+				<Handler event="OnEnter">
+					<Command value="Launcher.PlayAudio -name over_sound" />
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.PlayAudio -name click_sound -u 1" />
+					<Command value="Launcher.PopPage" />
+				</Handler>
+			</Button>
+			<Button name="minimize" mapColor="255 255 0">
+				<Handler event="OnEnter">
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.Minimize" />
+				</Handler>
+			</Button>
+			<Button name="close" mapColor="255 180 0">
+				<Handler event="OnEnter">
+				</Handler>
+				<Handler event="OnClick">
+					<Command value="Launcher.Quit" />
+				</Handler>
+			</Button>
+			<ControlGroup name="tab">
+				<ControlReference name="view_trailer" />
+				<ControlReference name="demo" />
+				<ControlReference name="back" />
+			</ControlGroup>
+		</Page>
+	</Resources>
+	<!-- English -->	
+	<LanguageResources name="English" lang="LANG_ENGLISH" sublang="SUBLANG_NEUTRAL">
+		<StringTableResource path="Install\strings\english\launcher.tab" />
+	</LanguageResources>
+	<!-- OnLoad event -->	
+	<Handler event="OnLoad">
+		<Command value="Launcher.VerifyResources" />
+		<Command value="Launcher.SetStartLanguage -name English" />
+		<Command value="Launcher.SetStartPage -name main" />
+		<Command value="Launcher.StartCDFlow -install install -requireCD false" />
+		<Command value="Launcher.ApplyStartLanguage" />
+		<Command value="Launcher.PushStartPage" />
+		<Command value="Launcher.PlayAudio -name start_sound -u 1" />
+	</Handler>
+	<!-- hardware -->	
+	<HardwareEx>
+		<Version domestic="true" demo="false" update="false" />
+		<Display rasterizer="true" tnl="true" pixelshader="false" />
+		<Sound hardware="true" halt="false" />
+		<DirectX major="9" minor="0" letter="c" />
+		<OS platform="2" major="5" minor="0" />
+	</HardwareEx>
+</Launcher>

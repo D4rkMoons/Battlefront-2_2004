@@ -1,0 +1,77 @@
+LN_ANALYZE	Analyze Your Computer
+LN_BACK	Go Back
+LN_CANCEL	Cancel
+LN_CHECK_UPDATES	Check for Updates
+LN_CONFIG_OPTS	Configuration Options
+LN_DEMO	Star Wars Galaxies Demo
+LN_DOWNLOAD_DIRECTX	Star Wars Battlefront II requires DirectX 9.0c. \nYou can download and install the appropriate version of DirectX from: \nhttp://support.lucasarts.com/patches/dx.htm
+LN_EJECTED_ERROR	No DVD detected. The Launcher will now close.
+LN_ENGLISH	English
+LN_EXIT	Exit
+LN_EXTRAS	Extras
+LN_FRENCH	Français
+LN_GERMAN	Deutsch
+LN_GO_CHECK_UPDATES	Check for Online Updates
+LN_HELP	Help
+LN_INSERT_GAME_CD_INSTALL	Please insert the Star Wars Battlefront II DVD into your DVD drive to install Star Wars Battlefront II
+LN_INSERT_GAME_CD_PLAY	Please insert the Star Wars Battlefront II DVD into your DVD drive to play Star Wars Battlefront II
+LN_INSTALL	Install
+LN_INSTALL_MANAGE	Installation Management
+LN_LAUNCHER_OK	Ok
+LN_LICENSE	View License Agreement
+LN_LIMITED_USER_ERROR	Unable to open game folder. If you are logged on with limited privileges,\nplease log off, log back on as Administrator and try again.
+LN_LIMITED_USER_INST	Unable to install game. If you are logged on with limited privileges,\nplease log off, log back on as Administrator and try again.
+LN_LIMITED_USER_UNINST	Unable to uninstall game. If you are logged on with limited privileges,\nplease log off, log back on as Administrator and try again.
+LN_MULTI	Multiplayer Game
+LN_NO_DISPLAY_PIXEL_SHADER	Insufficient Pixel shader detected on your display adapter. Support for Pixel Shader 1.1 or higher is recommended to run Star Wars Battlefront II. Do you want to continue?
+LN_NO_DISPLAY_RASTERIZER	No 3d hardware detected, do you want to continue?
+LN_NO_DISPLAY_TNL	No TnL detected on your display adapter, do you want to continue?
+LN_NO_OS	Insufficient Operating System detected on your machine. Star Wars Battlefront II requires Windows 2000 or higher. Do you want to continue?
+LN_NO_SOUND	Star Wars Battlefront II has detected that your sound card is either missing or disabled.  Would you like to continue without sound?
+LN_NO_SOUND_FAIL	Star Wars Battlefront II has detected that your sound card is either missing or disabled. A sound card is required to play.
+LN_OPTIONS	Options
+LN_PAGE_BROWSER	Browser
+LN_PAGE_EXTRAS	EXTRAS
+LN_PAGE_HELP	HELP
+LN_PAGE_INSTALL	INSTALL
+LN_PAGE_LANG	Language Selection
+LN_PAGE_MAIN	MAIN
+LN_PAGE_MANAGE	Manage
+LN_PAGE_OPTIONS	OPTIONS
+LN_PAGE_UPDATE	Update
+LN_PRODUCT	Star Wars Battlefront II
+LN_PROMPT_CD	Please insert DVD
+LN_README	View Readme
+LN_REGISTER	Register Online
+LN_REGISTER_LATER	Remind me later
+LN_REGISTER_NEVER	Never Register
+LN_REGISTER_NOW	Register Now
+LN_REGISTRATION	Register Star Wars Battlefront II
+LN_REINSTALL_DIRECTX	Star Wars Battlefront II needs to update your DirectX installation before you can proceed! Do you want to perform the update now?
+LN_SINGLE	Start Game
+LN_SPANISH	Español
+LN_TRAILER	View EAW Trailer
+LN_TROUBLE	View Troubleshooting Guide
+LN_UNINSTALL	Uninstall
+LN_VISIT_LEC	Visit www.lucasarts.com
+UPD_CANCELLED	Update cancelled.
+UPD_CHECKING	checking:
+UPD_CHECKING_INSTALL	Checking if your installation is up to date...
+UPD_COPY_FAILED	The Update operation failed or was interrupted.
+UPD_DONE	Done.
+UPD_DOWNLOAD_ERROR	An error occurred while downloading.
+UPD_DOWNLOADING	Downloading files from server...
+UPD_FAILED	Failed!
+UPD_FOUND_CONTINUE	Would you like to download the updates now?
+UPD_GETTING	Getting:
+UPD_INTERNET	(Are you connected to the Internet?)
+UPD_NO_COPIER	Error: Unable to Launch Copier
+UPD_NO_MANIFEST	Unable to get updates from server.
+UPD_NO_UPDATES	There are no updates currently available.
+UPD_NOT_FOUND	Not Found
+UPD_OK	OK
+UPD_SEARCHING	Searching for updates online...
+UPD_START_UPDATE	The update will now be applied to your system.  Press OK to start, or Cancel.
+UPD_UP_TO_DATE	Your installation is up to date.
+UPD_UPDATE	Update
+UPD_UPDATING	Updating...

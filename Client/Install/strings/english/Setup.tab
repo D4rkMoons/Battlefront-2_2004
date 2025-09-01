@@ -1,0 +1,140 @@
+Dummy	0	Empty
+IDBTN_LAUNCHER_DXDIAG	0x1018	&DirectX Diagnostics
+IDMSG_REINSTALL_DIRECTX	0x5006	This game needs to update your DirectX installation\nbefore you can proceed!\n\nDo you want to perform the update now?
+IDMSG_REMOVE_GAME_DATA	0x5011	Do you want to keep all saved games and configuration files?
+IDMSG_NT_WARNING	0x5015	Your operating system is Windows NT 4.0. This game will not run.
+IDMSG_DSETUP_MB_TITLE	0x7800	DirectX Setup
+IDMSG_DSETUP_OK	0x7883	DirectX setup needs to restart your machine, press OK to restart now.
+IDMSG_COLORDEPTH_ERROR	0x7885	You must be running in 256 color or higher. You can change the color depth in Display Properties and then restart the installation.
+IDMSG_LIMITED_USER_UNINST	0x7891	Unable to uninstall game. If you are logged on with limited privileges, please log off, log back on as Administrator and try again.
+IDMSG_MUTEX_CONFLICT_UNINST	0x7892	Please close game and launcher before uninstalling
+IDMSG_LIMITED_USER_DIRECTX	0x7894	Unable to install DirectX. If you are logged on with limited privileges,\nplease log off, log back on as Administrator and try again.
+INST039	0x8022	Start Menu Folder:
+INST040	0x8023	Target directory:
+INST055	0x8029	Setup complete
+INST061	0x802E	Setup will now install DirectX on your computer. Please consult the Troubleshooting Guide for more information on DirectX compatibility issues.
+INST062	0x802F	What is DirectX? DirectX is a combination of functions, routines, drivers, etc. that give programmers more direct access to hardware devices like the video card, sound card, joysticks/mice/keyboards, etc.
+INST063	0x8030	NOTE: If you know your machine is not DirectX compatible, please uncheck the box and follow the instructions.
+INST065	0x8032	 If, after running DirectX Setup, you have problems restarting, call Microsoft or your hardware vendor.
+INST066	0x8033	Setup has determined that your machine's DirectX (tm) drivers are current, and that you do not need to reinstall DirectX.
+INST067	0x8034	 You may, however, reinstall DirectX if you wish (you must check the box).
+INST069	0x8036	DirectX installation complete
+INST071	0x8038	DirectX MAY ask you for the Windows installation CD/DVD.
+INST073	0x803A	Install DirectX %s now.
+INST079	0x803E	Invalid path. Please make sure all back slashes "\\" are in place.
+INST080	0x803F	Invalid path. Periods "." are not allowed.
+INST099	0x8050	Do you want a shortcut to %s made on your desktop?
+INST100	0x8051	Play %s
+INST102	0x8053	 MB
+INST103	0x8054	Destination directory cannot be the root of a drive.
+INST106	0x8057	Manual Installation    %d MB
+INST114	0x8064	&Install DirectX %s
+INST207	0x8072	Automatic Installation
+INST208	0x8073	You have chosen the 'Automatic Installation' option to this location:\n
+INST209	0x8074	\n\nDirectX may be installed and you may have to restart this machine.\n\t\t    Continue?
+INST211	0x8075	Automatic (%d MB Required)\nRecommended for most computers.\nDirectX 9.0c may be installed.
+INST212	0x8076	Custom (%d MB Required)\nFor advanced users and system administrators only.  You can customize all available Setup options. DirectX 9.0c may be installed.
+INST213	0x8077	Please enter the Key found on the back of the manual.
+INST081	0x807A	Invalid path.
+INST214	0x8090	Do you want to cancel the installation?
+INST215	0x8091	Invalid key, please try again.
+INST216	0x8092	There's not enough space on your hard drive to install %s.\n This hard drive has %d MB, but %s requires %d MB.
+INST217	0x8093	GameSpy Arcade is the fast, free way to find games and opponents for %s online.  Join millions of other players just like yourself!\n\nHere’s what you get:\n\n - Support for over 600 leading games and game demos\n - Player matchmaking, chat and forums\n - Hundreds of FREE downloadable demos of the top games\n - Up-to-the minute news on the world of gaming\n - Even play the most popular Xbox games online\n\nWould you like to install GameSpy Arcade?
+INST218	0x8094	Yes, install GameSpy Arcade now.
+INST219	0x8095	No, install GameSpy Arcade later.
+INST220	0x8096	GameSpy Arcade
+INST223	0x8099	&Cancel
+INST224	0x80A0	< &Back
+INST225	0x80A1	&Next >
+INST226	0x80A2	Play Star Wars Battlefront II Online with GameSpy Arcade
+INST227	0x80A3	\n\t\tContinue?
+INST228	0x80A4	* Find your friends online playing Battlefront II.\n* Join them instantly with 1 click.\n* Chat with friends inside and outside Battlefront II.\n* Xfire has over 2,000,000 registered users.
+INST229	0x80A5	Yes, I want to install Xfire
+INST230	0x80A6	No, I don’t want to install Xfire
+INST231	0x80A7	Xfire
+INST232	0x80A8	Play Star Wars Battlefront II Online with Xfire
+INST233	0x80A9	Insufficient Operating System detected on your machine. Star Wars Battlefront II requires Windows 2000 or higher. Do you want to continue?
+ANLZ001	0xA001	System Checker
+ANLZ002	0xA002	&OK
+ANLZ003	0xA003	Item
+ANLZ004	0xA004	RAM
+ANLZ005	0xA005	Operating system
+ANLZ006	0xA006	CPU
+ANLZ008	0xA008	Hard drive
+ANLZ014	0xA00E	Required
+ANLZ016	0xA010	Windows 95
+ANLZ018	0xA012	Windows 98
+ANLZ022	0xA013	Your machine
+ANLZ023	0xA014	Status
+ANLZ024	0xA015	For best results, do not have any other programs running.
+ANLZ028	0xA019	Your computer failed %d of the above %d tests.
+ANLZ029	0xA01A	Your computer is qualified to play %s.
+ANLZ031	0xA01C	Please refer to the troubleshooting guide for more information.
+ANLZ033	0xA01E	Passed
+ANLZ034	0xA01F	Failed
+ANLZ035	0xA020	DirectX version
+ANLZ036	0xA021	 MB
+ANLZ037	0xA022	Windows 3.1
+ANLZ038	0xA023	Windows NT
+ANLZ039	0xA024	unknown
+ANLZ040	0xA025	 MHz
+ANLZ041	0xA026	Couldn't find the file '%s', or this program is not being run from a valid CD/DVD-ROM drive.  Please insert the %s install CD/DVD and try again.
+ANLZ050	0xA02F	Couldn't find the DirectX folder.  Please insert the %s CD/DVD and try again.
+ANLZ051	0xA030	You must first install DirectX before you can run the DirectX diagnostic program.
+ANLZ052	0xA031	Display adapter
+ANLZ053	0xA032	No 3D hardware
+ANLZ054	0xA033 	3D hardware
+ANLZ055	0xA034	Primary Display Adapter
+ANLZ056	0xA035	TnL
+ANLZ057	0xA036	Yes
+ANLZ058	0xA037	No
+ANLZ059	0xA040	Windows 98 SE/ME/2000/XP
+ANLZ060	0xA041	&Save Report
+ANLZ061	0xA042	Windows 98 SE
+ANLZ062	0xA043	Windows ME
+ANLZ063	0xA044	Windows 2000
+ANLZ064	0xA045	Windows XP
+ANLZ065	0xA046	SSE
+ANLZ066	0xA047	Gathering system information.\nPlease wait...
+ANLZ067	0xA048	Product
+ANLZ068	0xA049	Installation
+ANLZ069	0xA04A	Folder
+ANLZ070	0xA04B	Version
+ANLZ071	0xA04C	Display devices
+ANLZ072	0xA04D	Sound devices
+ANLZ073	0xA04E	Drives
+ANLZ074	0xA04F	LucasArts System Report
+ANLZ075	0xA050	Name
+ANLZ076	0xA051	Device
+ANLZ077	0xA052	Driver
+ANLZ078	0xA053	Speed
+ANLZ079	0xA054	MMX
+ANLZ080	0xA055	SSE2
+ANLZ081	0xA056	3DNow
+ANLZ082	0xA057	Total
+ANLZ083	0xA058	CD/DVD-ROM
+ANLZ084	0xA059	Fixed
+ANLZ085	0xA05A	Available
+ANLZ086	0xA05B	DirectX
+ANLZ087	0xA05C	TnL
+ANLZ088	0xA05D	VendorId
+ANLZ089	0xA05E	DeviceId
+ANLZ090	0xA05F	?
+ANLZ091	0xA060	Removable
+ANLZ092	0xA061	Text Documents
+ANLZ093	0xA062	Game controllers
+ANLZ094	0xA063	Software TnL
+ANLZ095	0xA064	Sound hardware
+ANLZ096	0xA065	No sound hardware
+ANLZ097	0xA066	File system
+ANLZ098	0xA067	Path
+ANLZ099	0xA068	Post install (N/A)
+ANLZ100	0xA069	Pixel shader 1.1
+ANLZ101	0xA070	Pixel shader
+ANLZ102	0xA071	Vertex shader
+ANLZ103	0xA072	Memory
+ANLZ104	0xA073	Windows 2000/XP
+ANLZ105	0xA074	Windows Server 2003
+ANLZ106	0xA075	Windows Vista
+DIRX027	0xD047	Please insert CD/DVD 1 to install DirectX.
+DIRX028	0xD048	Please insert CD/DVD 1.
